@@ -1,11 +1,29 @@
 <template>
   <div class="homepage">
-    <router-link to="" class="alink">全部客户</router-link>
-    <router-link to="" class="alink">机检</router-link>
-    <router-link to="" class="alink">开工实施</router-link>
-    <router-link to="" class="alink">签约等待</router-link>
-    <router-link to="" class="alink">签约成功</router-link>
-    <router-link to="" class="alink">签约失败</router-link>
+    <router-link to="" class="alink">
+      <img class="all_user" src="../assets/img/qqq.jpg">
+      全部客户
+    </router-link>
+    <router-link to="" class="alink">
+      <img class="all_user" src="../assets/img/qqq.jpg">
+      机检
+    </router-link>
+    <router-link to="" class="alink">
+      <img class="all_user" src="../assets/img/qqq.jpg">
+      开工实施
+    </router-link>
+    <router-link to="" class="alink">
+      <img class="all_user" src="../assets/img/qqq.jpg">
+      签约等待
+    </router-link>
+    <router-link to="" class="alink">
+      <img class="all_user" src="../assets/img/qqq.jpg">
+      签约成功
+    </router-link>
+    <router-link to="" class="alink">
+      <img class="all_user" src="../assets/img/qqq.jpg">
+      签约失败
+    </router-link>
 
   </div>
 </template>
@@ -29,6 +47,13 @@ export default {
 
 }
 a{
-  width:33%;text-align: center;
+  width:33%;text-align: center; margin-bottom:10%;
+}
+.all_user{
+  width:96px;
+  height:96px;
+  border-radius:50%;
+  display:block;
+  margin: 0 auto;
 }
 </style>
