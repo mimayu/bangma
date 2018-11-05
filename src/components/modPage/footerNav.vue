@@ -1,7 +1,7 @@
 <template>
   <div class="footerNav">
-    <router-link to="" class="alink">
-    <img class="home_icon" src="../assets/img/qqq.jpg">
+    <router-link to="/" class="alink">
+    <img class="home_icon" src="../../assets/img/qqq.jpg">
     {{home}}
     </router-link>
     <router-link to="" class="alink">{{msg}}</router-link>

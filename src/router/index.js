@@ -1,26 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import footerNav from '@/components/footerNav'
-import homePage from '@/components/homePage'
+import home from '@/components/home'
+import allUser from '@/components/allUser'
 
 Vue.use(Router)
 
 export default new Router({
     routes: [{
             path: '/',
-            name: 'HelloWorld',
-            component: HelloWorld
+            name: 'home',
+            component: home
         },
         {
-            path: '/',
-            name: 'footerNav',
-            component: footerNav
+            path: '/allUser',
+            name: 'allUser',
+            component: allUser
         },
-        {
-            path: '/',
-            name: 'homePage',
-            component: homePage
-        }
+        
     ]
 })
