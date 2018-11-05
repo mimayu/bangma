@@ -1,6 +1,6 @@
 <template>
   <div class="footerNav">
-    <router-link to="" class="alink">
+    <router-link to="/" class="alink">
     <img class="home_icon" src="../assets/img/qqq.jpg">
     {{home}}
     </router-link>
