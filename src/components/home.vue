@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import footerNav from './footerNav' // 引入login.vue组件
-import homePage from './homePage' // 引入login.vue组件
+import footerNav from '../components/modPage/footerNav'
+import homePage from '../components/modPage/homePage' // 引入login.vue组件
 export default {
   name: 'home',
   components: {

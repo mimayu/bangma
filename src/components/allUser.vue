@@ -1,5 +1,5 @@
 <template>
-  <div class="oo">
+  <div class="allUser">
     {{msg}}
     <!--页脚导航-->
     <footerNav></footerNav>
@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import footerNav from './footerNav' // 引入login.vue组件
+import footerNav from '../components/modPage/footerNav'
 
 export default {
-  name: 'oo',
+  name: 'allUser',
   data () {
     return {
       msg: '我是hello word'
