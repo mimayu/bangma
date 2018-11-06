@@ -28,7 +28,7 @@ export default {
     position: fixed;
     width: 100%; display: flex;left: 0;bottom: 0;
     border-top:1px solid #eee;
-    line-height:10px;
+    line-height:10px;background: #fff;
   }
  .alink{
       flex: 1;text-align: center;height: 50px;line-height: 50px;
