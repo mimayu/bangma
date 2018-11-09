@@ -1,6 +1,8 @@
 <template>
   <div class="allUser">
-    <h1>{{ msg }}</h1>
+    <filtrate></filtrate>
+
+    <!-- <h1>{{ msg }}</h1> -->
     <footerNav></footerNav>
 
   </div>
@@ -8,15 +10,17 @@
 
 <script>
 import footerNav from './modPage/footerNav' // 引入login.vue组件
+import filtrate from './modPage/filtrate' // 引入login.vue组件
 
 export default {
   name: 'allUser',
   data () {
     return {
-      msg: '我是hello word'
+      // msg: '我是hello word'
     }
   },
     components: {
+    'filtrate': filtrate,
     'footerNav': footerNav,
   },
 }
