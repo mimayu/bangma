@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import home from '@/components/home'
 import allUser from '@/components/allUser'
 import detection from '@/components/detection'
+import record from '@/components/record'
 
 Vue.use(Router)
 
@@ -22,6 +23,12 @@ export default new Router({
             name: 'detection',
             component: detection
         },
+        {
+            path: '/record',
+            name: 'record',
+            component: record
+        },
+
 
 
     ]
