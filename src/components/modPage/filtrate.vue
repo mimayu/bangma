@@ -9,7 +9,7 @@
         <Button shape="circle" icon="ios-search">Search</Button>
       </li>
    </ul>
-    <section class="filtrate-list">
+    <section class="filtrate-list" v-show="isshow">
       <Form :model="formData">
       <h6>筛选</h6>
       <Row :gutter="16">
@@ -72,6 +72,10 @@ export default {
   data() {
     return {
       // value1: false
+      isshow:false,
+       formData: {
+
+                },
     };
   }
 };
@@ -102,7 +106,7 @@ export default {
 .filtrate-list{
   padding: 10px;
   h6{
-    padding: 10px; 
+    padding: 10px;
   }
 }
 .ivu-col{
