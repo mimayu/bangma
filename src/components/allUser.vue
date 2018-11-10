@@ -28,6 +28,7 @@
         </li>
       </ul>
     </div>
+        <footerNav></footerNav>
   </div>
 </template>
 
@@ -53,7 +54,7 @@ export default {
   background-color: #f6f6f6;
 }
   .header_btn{
-    height: 44px; 
+    height: 44px;
     line-height: 44px;
     background-color:#f6f6f6;
     padding: 0 10px;
