@@ -1,7 +1,7 @@
 <template>
   <div class="homepage">
     <router-link to="allUser" class="alink">
-      <img class="all_user" src="../../assets/img/qqq.jpg">
+      <img class="all_user" src="../../assets/img/home.png">
       全部客户
     </router-link>
     <router-link to="" class="alink">
