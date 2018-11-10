@@ -54,10 +54,9 @@ export default {
 }
   .header_btn{
     height: 44px; 
-    line-height: 44px
-    background-color: #f6f6f6;
+    line-height: 44px;
+    background-color:#f6f6f6;
     padding: 0 10px;
-    border-bottom: solid 1px #D8D8D8；
   }
   .header_btn img{
     width: 14px;

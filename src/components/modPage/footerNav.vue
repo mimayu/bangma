@@ -1,11 +1,17 @@
 <template>
   <div class="footerNav">
     <router-link to="/" class="alink">
-    <img class="home_icon" src="../../assets/img/qqq.jpg">
+    <img class="home_icon" src="../../assets/img/22x.png">
     {{home}}
     </router-link>
-    <router-link to="" class="alink">{{msg}}</router-link>
-    <router-link to="" class="alink">{{me}}</router-link>
+    <router-link to="" class="alink">
+      <img class="home_icon" src="../../assets/img/12x.png">
+      {{msg}}
+      </router-link>
+    <router-link to="" class="alink">
+      <img class="home_icon" src="../../assets/img/32x.png">
+      {{me}}
+      </router-link>
   </div>
 </template>
 
@@ -31,16 +37,18 @@ export default {
     width: 100%; display: flex;left: 0;bottom: 0;
     border-top:1px solid #eee;
     line-height:10px;
+    padding-top: 7px;
+    box-shadow:0px 0px 9px #eee;
 
   }
  .alink{
-      flex: 1;text-align: center;height: 50px;line-height: 50px;
-      font-weight: 500;font-size: 18px;
+      flex: 1;text-align: center;height: 45px;line-height: 18px;
+      font-weight: 500;font-size: 10px;
     }
   .home_icon{
-    width:15px;
-    height:15px;
+    width:18px;
+    height:18px;
     display:block;
-    margin:2px auto 0 auto;
+    margin:0 auto 3px auto;
   }
 </style>
