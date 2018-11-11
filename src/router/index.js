@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import home from '@/components/home'
 import allUser from '@/components/allUser'
 import detection from '@/components/detection'
+import priceDetail from '@/components/priceDetail'
 
 Vue.use(Router)
 
@@ -22,7 +23,11 @@ export default new Router({
             name: 'detection',
             component: detection
         },
-
+        {
+            path: '/priceDetail',
+            name: 'priceDetail',
+            component: priceDetail
+        },
 
     ]
 })

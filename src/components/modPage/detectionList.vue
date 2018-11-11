@@ -81,7 +81,7 @@ export default {
 <style scoped lang='less'>
 .list {
   // margin: 0 10px;
-  background: #eee;  
+  background: #eee;  padding-bottom: 50px;
   li{background: #fff;margin-bottom: 5px;padding-left: 10px;}
   dt {
     height: 44px;
