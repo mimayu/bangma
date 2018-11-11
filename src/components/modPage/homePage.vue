@@ -4,7 +4,7 @@
       <img class="all_user" src="../../assets/img/home.png">
       全部客户
     </router-link>
-    <router-link to="" class="alink">
+    <router-link to="detection" class="alink">
       <img class="all_user" src="../../assets/img/3.png">
       基检
     </router-link>

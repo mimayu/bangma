@@ -33,6 +33,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style <style lang="less" scoped>
 .footerNav{
+    background: #fff;
     position: fixed;
     width: 100%; display: flex;left: 0;bottom: 0;
     border-top:1px solid #eee;

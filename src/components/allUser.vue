@@ -1,7 +1,7 @@
 <template>
   <div class="allUser">
     <filtrate></filtrate>
-
+    <detectionList></detectionList>
     <!-- <h1>{{ msg }}</h1> -->
     <footerNav></footerNav>
 
@@ -9,8 +9,9 @@
 </template>
 
 <script>
-import footerNav from './modPage/footerNav' // 引入login.vue组件
-import filtrate from './modPage/filtrate' // 引入login.vue组件
+import footerNav from './modPage/footerNav' // 引入页脚
+import filtrate from './modPage/filtrate' // 筛选
+import detectionList from './modPage/detectionList' // 引入用户列表
 
 export default {
   name: 'allUser',
@@ -21,6 +22,7 @@ export default {
   },
     components: {
     'filtrate': filtrate,
+    'detectionList': detectionList,
     'footerNav': footerNav,
   },
 }
