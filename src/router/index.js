@@ -5,6 +5,8 @@ import allUser from '@/components/allUser'
 import detection from '@/components/detection'
 import record from '@/components/record'
 import priceDetail from '@/components/priceDetail'
+import orderStatus from '@/components/orderStatus'
+import roster from '@/components/roster'
 
 Vue.use(Router)
 
@@ -34,6 +36,15 @@ export default new Router({
             name: 'priceDetail',
             component: priceDetail
         },
-
+        {
+            path: '/orderStatus',
+            name: 'orderStatus',
+            component: orderStatus
+        },
+        {
+            path: '/roster',
+            name: 'roster',
+            component: roster
+        },
     ]
 })
