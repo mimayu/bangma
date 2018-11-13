@@ -9,7 +9,7 @@
           <span>35岁左右</span>
         </div>
       </div>
-      <span>箭头</span>
+      <span class="arrow"><img  src="../assets/img/Copy2x.png"></span>
     </div>
       <span class="basic-text order-text">基本信息</span>
       <ul class="basic_info">
@@ -17,63 +17,63 @@
           <ul class="basic_info_list">
             <li class="left">手机</li>
             <li class="center">15215802921</li>
-            <li class="arrow"></li>
+            <li class="arrow"><img src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
             <li class="left">家庭电话</li>
             <li class="center">021-22556355</li>
-            <li class=""><span class="arrow"></span></span></li>
+            <li class="arrow"><img src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
             <li class="left">住址</li>
             <li class="center">交通西路108弄4号2308室</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
             <li class="left">小区名称</li>
             <li class="center">中远两湾城</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
             <li class="left">户型</li>
             <li class="center">3室2厅2卫1阳台</li>
-            <li class="arrow"> 箭头</li>
+           <li class="arrow"><img src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
             <li class="left">面积</li>
             <li class="center">120㎡</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
             <li class="left">房屋类型</li>
             <li class="lcenter">别墅</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
             <li class="left">装修类型</li>
             <li class="center">整装设计</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
             <li class="left">施工区域</li>
             <li class="center">厨房</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <!-- <li class="basic_info_title"> 
@@ -100,7 +100,7 @@
           <ul class="basic_info_list">
             <li>查看记录</li>
             <li></li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
       </ul>
@@ -110,55 +110,55 @@
         <ul class="basic_info_list">
             <li class="left">订单号</li>
             <li class="center">09800</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
         </ul>
         <li class="basic_info_title">
           <ul class="basic_info_list">
             <li class="left">接单日期</li>
             <li class="center">2018-12-11</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title">
           <ul class="basic_info_list">
             <li class="left">业务员</li>
             <li class="center">董春华</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title">
           <ul class="basic_info_list">
             <li class="left">订单状态</li>
             <li class="center">基检未约</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title">
           <ul class="basic_info_list">
             <li class="left">预约时间</li>
             <li class="center">2018-11-11</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title">
           <ul class="basic_info_list">
             <li class="left">客户来源</li>
             <li class="center">百度</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title order_info_title">
           <ul class="basic_info_list">
             <li class="left">刷新PSR</li>
             <li class="center">许祥春</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title order_info_title">
           <ul class="basic_info_list">
             <li class="left">推荐人</li>
             <li class="center">陆卫卫</li>
-            <li class="arrow">箭头</li>
+            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
       </ul>
@@ -207,7 +207,12 @@ export default {
         &:last-child{width:25%;}
         &:nth-child(2){width:50%;}
       }
-      .arrow{text-align: right;}
+      .arrow{ text-align: right;}
+      .arrow img{
+        width: 8px;
+        height: 14px;
+        
+      }
       .work-content::placeholder{
         margin-left:30%;
       }
