@@ -179,6 +179,7 @@ export default {
 </script>
 
 <style scoped lang="less">
+#userinfo{background-color:#ccc;}
 .userinfo_top{
   width:100%;height:64px;background-color:#fff;display:flex;align-items: center;justify-content: space-between;padding-left: 15px;padding-right:15px;
   .user_img{
@@ -214,7 +215,7 @@ export default {
   }
 }
 textarea{
-  height: 115px;background-color: #fff;width:100%;margin-left:15px;margin-right:15px;margin-bottom:15px;
+  height: 115px;background-color: #fff;width:100%;padding-left:15px;margin-right:15px;margin-bottom:15px;
 }
 textarea::placeholder {
         color: red;
