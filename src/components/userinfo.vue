@@ -11,68 +11,68 @@
       </div>
       <span>箭头</span>
     </div>
-      <span class="basic-text">基本信息</span>
+      <span class="basic-text order-text">基本信息</span>
       <ul class="basic_info">
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
-            <li>手机</li>
-            <li>15215802921</li>
+            <li class="left">手机</li>
+            <li class="center">15215802921</li>
             <li class="arrow"></li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
-            <li>家庭电话</li>
-            <li>021-22556355</li>
-            <li class="arrow"></li>
+            <li class="left">家庭电话</li>
+            <li class="center">021-22556355</li>
+            <li class=""><span class="arrow"></span></span></li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
-            <li>住址</li>
-            <li>交通西路108弄4号2308室</li>
+            <li class="left">住址</li>
+            <li class="center">交通西路108弄4号2308室</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
-            <li>小区名称</li>
-            <li>中远两湾城</li>
+            <li class="left">小区名称</li>
+            <li class="center">中远两湾城</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
-            <li>户型</li>
-            <li>3室2厅2卫1阳台</li>
+            <li class="left">户型</li>
+            <li class="center">3室2厅2卫1阳台</li>
             <li class="arrow"> 箭头</li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
-            <li>面积</li>
-            <li>120㎡</li>
+            <li class="left">面积</li>
+            <li class="center">120㎡</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
-            <li>房屋类型</li>
-            <li>别墅</li>
+            <li class="left">房屋类型</li>
+            <li class="lcenter">别墅</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
-            <li>装修类型</li>
-            <li>整装设计</li>
+            <li class="left">装修类型</li>
+            <li class="center">整装设计</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
-            <li>施工区域</li>
-            <li>厨房</li>
+            <li class="left">施工区域</li>
+            <li class="center">厨房</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
@@ -82,8 +82,8 @@
               <textarea placeholder="说说当前的情况吧"></textarea>
             </li>
           </ul>
-        </li> -->
-        <!-- <li class="basic_info_title"> 
+        </li>
+        <li class="basic_info_title"> 
           <ul class="basic_info_list">
             <li>查看记录</li>
             <li></li>
@@ -91,7 +91,10 @@
           </ul>
         </li> -->
       </ul>
-      <textarea placeholder="说说当时的情况吧">施工内容</textarea>
+      <ul>
+        <li></li>
+      </ul>
+      <textarea  placeholder="请在此处介绍自己...">施工内容</textarea>
       <ul>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
@@ -101,61 +104,60 @@
           </ul>
         </li>
       </ul>
-      <span class="order-text">订单信息</span>
-      <ul class="order_info">
-        <li class="order_info_title">
-          <ul class="order_info_list">
-            <li>订单号</li>
-            <li>09800</li>
+      <span class="basic-text order-text">订单信息</span>
+      <ul class="basic_info order_info">
+        <li class="basic_info_title"> 
+        <ul class="basic_info_list">
+            <li class="left">订单号</li>
+            <li class="center">09800</li>
+            <li class="arrow">箭头</li>
+        </ul>
+        <li class="basic_info_title">
+          <ul class="basic_info_list">
+            <li class="left">接单日期</li>
+            <li class="center">2018-12-11</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
-        <li class="order_info_title">
-          <ul class="order_info_list">
-            <li>订单号</li>
-            <li>09800</li>
+        <li class="basic_info_title">
+          <ul class="basic_info_list">
+            <li class="left">业务员</li>
+            <li class="center">董春华</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
-        <li class="order_info_title">
-          <ul class="order_info_list">
-            <li>订单号</li>
-            <li>09800</li>
+        <li class="basic_info_title">
+          <ul class="basic_info_list">
+            <li class="left">订单状态</li>
+            <li class="center">基检未约</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
-        <li class="order_info_title">
-          <ul class="order_info_list">
-            <li>订单号</li>
-            <li>09800</li>
+        <li class="basic_info_title">
+          <ul class="basic_info_list">
+            <li class="left">预约时间</li>
+            <li class="center">2018-11-11</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
-        <li class="order_info_title">
-          <ul class="order_info_list">
-            <li>订单号</li>
-            <li>09800</li>
+        <li class="basic_info_title">
+          <ul class="basic_info_list">
+            <li class="left">客户来源</li>
+            <li class="center">百度</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
-        <li class="order_info_title">
-          <ul class="order_info_list">
-            <li>订单号</li>
-            <li>09800</li>
+        <li class="basic_info_title order_info_title">
+          <ul class="basic_info_list">
+            <li class="left">刷新PSR</li>
+            <li class="center">许祥春</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
-        <li class="order_info_title">
-          <ul class="order_info_list">
-            <li>订单号</li>
-            <li>09800</li>
-            <li class="arrow">箭头</li>
-          </ul>
-        </li>
-        <li class="order_info_title">
-          <ul class="order_info_list">
-            <li>订单号</li>
-            <li>09800</li>
+        <li class="basic_info_title order_info_title">
+          <ul class="basic_info_list">
+            <li class="left">推荐人</li>
+            <li class="center">陆卫卫</li>
             <li class="arrow">箭头</li>
           </ul>
         </li>
@@ -177,9 +179,8 @@ export default {
 </script>
 
 <style scoped lang="less">
-#userinfo{margin-left: 15px;margin-right:15px;}
 .userinfo_top{
-  width:100%;height:64px;background-color:#fff;display:flex;align-items: center;justify-content: space-between;
+  width:100%;height:64px;background-color:#fff;display:flex;align-items: center;justify-content: space-between;padding-left: 15px;padding-right:15px;
   .user_img{
     width:48px;height:48px;border-radius: 50%;
   }
@@ -187,23 +188,23 @@ export default {
     display: flex;
     align-items: center;
     .user-details{
+      margin-left: 10px;
     .user-name{font-size:14px;color: #191F25;}
-    span{font-size: 9px;color:#191F25;}
+    span{font-size: 9px;color:#191F25;} 
     }
   }
 }
-.basic-text{color:#9C9C9C;font-size:12px;}
+.basic-text{color:#9C9C9C;font-size:12px;background-color: #ccc;display: inline-block;width: 100%;height:25px;line-height:25px;padding-left:15px;}
 .basic_info{
   background-color:#fff;
   .basic_info_title{
     height:44px;line-height:44px;border-bottom:1px solid #C6C6C6 ;
     .basic_info_list{
-      color:#191F25;width:100%;display: flex;
+      color:#191F25;width:100%;display: flex;padding-left:15px;padding-right:15px;
       li{
-        flex: 1;
-        &:first-child{width: 20%;}
-        &:last-child{width:20%;}
-        &：nth-child(2){width:60%;}
+        &:first-child{width: 25%;}
+        &:last-child{width:25%;}
+        &:nth-child(2){width:50%;}
       }
       .arrow{text-align: right;}
       .work-content::placeholder{
@@ -213,8 +214,11 @@ export default {
   }
 }
 textarea{
-  height: 115px;background-color: #fff;
+  height: 115px;background-color: #fff;width:100%;margin-left:15px;margin-right:15px;margin-bottom:15px;
 }
+textarea::placeholder {
+        color: red;
+    }
 .order-text{color:#9C9C9C;font-size:12px;}
 .order_info{
   background-color: #fff;
@@ -232,4 +236,19 @@ textarea{
     }
   }
 }
+.basic_info_title{
+    height:44px;line-height:44px;background-color:#fff;
+    .basic_info_list{
+      color:#191F25;width:100%;display: flex;padding-left:15px;padding-right:15px;
+      li{
+        &:first-child{width: 25%;}
+        &:last-child{width:25%;}
+        &:nth-child(2){width:50%;}
+      }
+      .arrow{text-align: right;}
+      .work-content::placeholder{
+        margin-left:30%;
+      }
+    }
+  }
 </style>
