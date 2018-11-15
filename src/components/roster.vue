@@ -1,7 +1,24 @@
 <template>
  
   <div class="roster">
-    新建  工长  员工  客户 都在这里 
+    <ul>
+      <li>姓名 <Input class="name" v-model="value" placeholder="请输入姓名 2-15个字" /></li>
+      <li>姓别  </li>
+      <li>年龄</li>
+      <li>手机号<Input class="name" v-model="value" placeholder="请输入手机号" /></li>
+      <li>住址<Input class="name" v-model="value" placeholder="请输入住址" /></li>
+      <li>故乡</li>
+      <li>身份证<Input class="name" v-model="value" placeholder="请输入身份证号码" /></li>
+      <li>学历</li>
+      <li>专业<Input class="name" v-model="value" placeholder="请输入专业" /></li>
+      <li>入职时间</li>
+      <li>工号</li>
+      <li>部门</li>
+      <li>角色</li>
+      <li>分组</li>
+      <li>用户名</li>
+      <li>密码</li>
+    </ul>
 </div>
 
 </template>
@@ -21,27 +38,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-  .record{
-    background-color: #f6f6f6;
-  }
-  .record h3{
-    padding: 5px 10px;
-    color: #757575;
-  }
-  .r-content{
-    padding: 5px 10px;
-    background-color: #fff;
-    color: #A3A4A6;
-    font-size: 16px;
-  }
-  .r-pic{
-    border-top: solid 1px #C6C6C6;
-    padding: 10px 0px 10px 10px;
-    margin-top: 3px;
-  }
-  .record_icon{
-    border: solid 1px #999;
-    width: 75px; 
-    height: 75px;
+  .roster li{
+    text-align: left;
+    border-bottom: solid 1px #c6c6c6;
+    line-height: 44px;
+    padding-left: 10px;
+    .name{width:90%}
   }
 </style>
