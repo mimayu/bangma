@@ -11,6 +11,8 @@ import userinfo from '@/components/userinfo'
 import quotationList from '@/components/quotationList'
 import startWork from '@/components/startWork'
 import signStatus from '@/components/signStatus'
+import login from '@/components/login'
+import register from '@/components/register'
 
 
 
@@ -72,6 +74,15 @@ export default new Router({
             name: 'signStatus',
             component: signStatus
         },
-
+        {
+            path: '/login',
+            name: 'login',
+            component: login
+        },
+        {
+            path: '/register',
+            name: 'register',
+            component: register
+        },
     ]
 })

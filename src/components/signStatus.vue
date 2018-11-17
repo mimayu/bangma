@@ -13,7 +13,6 @@
         </TabPane>
     </Tabs>
     <footerNav></footerNav>
-
   </div>
 </template>
 
