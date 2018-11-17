@@ -3,6 +3,8 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const vuxLoader = require('vux-loader')
+const webpackConfig = originalConfig // 原来的 module.exports 代码赋值给变量 webpackConfig
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
@@ -82,3 +84,6 @@ module.exports = {
         child_process: 'empty'
     }
 }
+module.exports = vuxLoader.merge(webpackConfig, {
+    plugins: ['vux-ui']
+})
