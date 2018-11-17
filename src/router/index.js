@@ -9,6 +9,9 @@ import orderStatus from '@/components/orderStatus'
 import roster from '@/components/roster'
 import userinfo from '@/components/userinfo'
 import quotationList from '@/components/quotationList'
+import startWork from '@/components/startWork'
+import signStatus from '@/components/signStatus'
+
 
 
 Vue.use(Router)
@@ -58,6 +61,16 @@ export default new Router({
             path: '/quotationList',
             name: 'quotationList',
             component: quotationList
+        },
+        {
+            path: '/startWork',
+            name: 'startWork',
+            component: startWork
+        },
+        {
+            path: '/signStatus',
+            name: 'signStatus',
+            component: signStatus
         },
 
     ]

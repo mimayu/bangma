@@ -8,19 +8,19 @@
       <img class="all_user" src="../../assets/img/3.png">
       基检
     </router-link>
-    <router-link to="" class="alink">
+    <router-link to="startWork" class="alink">
       <img class="all_user" src="../../assets/img/4.png">
       开工实施
     </router-link>
-    <router-link to="" class="alink">
+    <router-link to="signStatus" class="alink">
       <img class="all_user" src="../../assets/img/5.png">
       签约等待
     </router-link>
-    <router-link to="" class="alink">
+    <router-link to="signStatus" class="alink">
       <img class="all_user" src="../../assets/img/6.png">
       签约成功
     </router-link>
-    <router-link to="" class="alink">
+    <router-link to="signStatus" class="alink">
       <img class="all_user" src="../../assets/img/7.png">
       签约失败
     </router-link>

@@ -1,17 +1,15 @@
 <template>
   <div class="detection">
+    <!-- <h1>{{ msg }}</h1> -->
     <Tabs value="name1">
-        <TabPane label="基检未约" name="name1">
+        <TabPane label="签约等待" name="name1">
             <detectionList></detectionList>
         </TabPane>
-        <TabPane label="基检预约" name="name2">
-          <detectionList></detectionList>
+        <TabPane label="签约成功" name="name2">
+            <detectionList></detectionList>
         </TabPane>
-        <TabPane label="基检确认" name="name3">
-          <detectionList></detectionList>
-        </TabPane>
-        <TabPane label="基检取消" name="name4">
-          <detectionList></detectionList>
+        <TabPane label="签约失败" name="name3">
+            <detectionList></detectionList>
         </TabPane>
     </Tabs>
     <footerNav></footerNav>
