@@ -4,15 +4,12 @@ import home from '@/components/home'
 import allUser from '@/components/allUser'
 import detection from '@/components/detection'
 import record from '@/components/record'
-import priceDetail from '@/components/priceDetail' <<
-<< << < HEAD
+import priceDetail from '@/components/priceDetail'
 import orderStatus from '@/components/orderStatus'
-import roster from '@/components/roster' ===
-=== =
+import roster from '@/components/roster'
 import userinfo from '@/components/userinfo'
+import quotationList from '@/components/quotationList'
 
->>>
->>> > huihui
 
 Vue.use(Router)
 
@@ -56,6 +53,11 @@ export default new Router({
             path: '/userinfo',
             name: 'userinfo',
             component: userinfo
+        },
+        {
+            path: '/quotationList',
+            name: 'quotationList',
+            component: quotationList
         },
 
     ]
