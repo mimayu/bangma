@@ -2,11 +2,11 @@
   <div class="filtrate">
    <ul class="filtrate_tab">
       <li>
-        <Button value="toggle" v-on:click="toggle()">筛选</Button>
+        <Button  v-on:click="toggle()">筛选</Button>
       </li>
-      <li><Button value="toggle" v-on:click="toggle()">时间</Button></li>
+      <li><Button  v-on:click="toggle('time')">时间</Button></li>
       <li>
-        <Button shape="circle" icon="ios-search">搜索</Button>
+        <Button shape="circle" icon="ios-search"  v-on:click="toggle('search')" >搜索</Button>
       </li>
    </ul>
     <section class="filtrate-list" v-show="isShow">
@@ -59,21 +59,25 @@
       </Row>
       </Form>
       <div class="demo-drawer-footer">
-          <Button style="margin-right: 8px" @click="value3 = false">Cancel</Button>
+          <Button style="margin-right: 8px;background: #E9F3FC;" @click="value3 = false">Cancel</Button>
           <Button type="primary" @click="value3 = false">Submit</Button>
       </div>
     </section>
-    <section class="time-box"  v-show="isShow">
+    <section class="filtrate-list time-box"  v-show="time">
       <Row>
-        <i-col span="12">
-            <DatePicker type="date" :options="options3" placeholder="Select date" style="width: 200px"></DatePicker>
+        <i-col span="10">
+            <DatePicker type="date" :options="options3" placeholder="Select date"></DatePicker>
         </i-col>
-        <i-col span="12">
-            <DatePicker type="date" :options="options4" placeholder="Select date" style="width: 200px"></DatePicker>
+      </Row>
+
+      <Row>
+
+        <i-col span="10">
+            <DatePicker type="date" :options="options3" placeholder="Select date"></DatePicker>
         </i-col>
       </Row>
     </section>
-    <section class="serach-box"  v-show="isShow">
+    <section class="filtrate-list serach-box"  v-show="search">
         这里搜索
     </section>
   </div>
@@ -85,9 +89,9 @@ export default {
   data:function() {
     return {
       // value1: false
-      isShow: {
-        isShow:false
-      },
+      isShow:false,
+      time:false,
+      search:false,
       formData: {},
       options3: {
         disabledDate(date) {
@@ -103,8 +107,18 @@ export default {
     };
   },
   methods: {
-    toggle: function() {
-      this.isShow = !this.isShow;
+    // toggle: function(val){
+    //   console.log(val,this.val = !this.val)
+    //   this.val = !this.val;
+    // }
+     toggle: function(val){
+      if(val=="time"){
+        this.time = !this.time;
+      }else if(val=="search") {
+        this.search = !this.search;
+      }else{
+        this.isShow = !this.isShow;
+      }
     }
   }
 };
@@ -135,6 +149,7 @@ export default {
     box-shadow: none;
     // color: #1b96ed;
     font-size: 14px;
+    width: 45%;
   }
 }
 .filtrate-list {
@@ -157,4 +172,15 @@ export default {
     line-height: 35px;
   }
 }
+.demo-drawer-footer{
+  margin-top: 30px;
+}
+.time-box{
+  .ivu-input-icon-normal+.ivu-input{padding-right: 0;}
+  .ivu-input{height: 23px;border: 0;outline: 0;}
+}
+.ivu-input:focus {
+    border-color:#fff;
+    outline: 0;
+    box-shadow:none}
 </style>
