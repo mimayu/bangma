@@ -5,7 +5,7 @@
         卫生间
         <span class="price">
           ¥3849038
-          <a><img class="stretch" src="../assets/img/41.pic.jpg"></a>
+          <a><img class="stretch" src="../assets/img/41.jpg"></a>
         </span>
       </dt>
       <dd>
@@ -23,7 +23,7 @@
         卫生间
         <span class="price">
           ¥3849038
-          <a><img class="stretch" src="../assets/img/26.pic.jpg"></a>
+          <a><img class="stretch" src="../assets/img/26.jpg"></a>
         </span>
       </dt>
       <dd>
@@ -41,7 +41,7 @@
         卫生间
         <span class="price">
           ¥3849038
-          <a><img class="stretch" src="../assets/img/26.pic.jpg"></a>
+          <a><img class="stretch" src="../assets/img/26.jpg"></a>
         </span>
       </dt>
       <dd>
@@ -59,7 +59,7 @@
         卫生间
         <span class="price">
           ¥3849038
-          <a><img class="stretch" src="../assets/img/26.pic.jpg"></a>
+          <a><img class="stretch" src="../assets/img/26.jpg"></a>
         </span>
       </dt>
       <dd>
@@ -77,7 +77,7 @@
         卫生间
         <span class="price">
           ¥3849038
-          <a><img class="stretch" src="../assets/img/26.pic.jpg"></a>
+          <a><img class="stretch" src="../assets/img/26.jpg"></a>
         </span>
       </dt>
       <dd>
@@ -95,7 +95,7 @@
         卫生间
         <span class="price">
           ¥3849038
-          <a><img class="stretch" src="../assets/img/26.pic.jpg"></a>
+          <a><img class="stretch" src="../assets/img/26.jpg"></a>
         </span>
       </dt>
       <dd>
@@ -113,7 +113,7 @@
         卫生间
         <span class="price">
           ¥3849038
-          <a><img class="stretch" src="../assets/img/26.pic.jpg"></a>
+          <a><img class="stretch" src="../assets/img/26.jpg"></a>
         </span>
       </dt>
       <dd>
