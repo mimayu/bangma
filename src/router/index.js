@@ -13,6 +13,8 @@ import startWork from '@/components/startWork'
 import signStatus from '@/components/signStatus'
 import login from '@/components/login'
 import register from '@/components/register'
+import staffList from '@/components/staffList'
+import allotOrder from '@/components/allotOrder'
 
 
 
@@ -83,6 +85,16 @@ export default new Router({
             path: '/register',
             name: 'register',
             component: register
+        },
+        {
+            path: '/staffList',
+            name: 'staffList',
+            component: staffList
+        },
+        {
+            path: '/allotOrder',
+            name: 'allotOrder',
+            component: allotOrder
         },
     ]
 })
