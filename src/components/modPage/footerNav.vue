@@ -40,6 +40,7 @@ export default {
     line-height:10px;
     padding-top: 7px;
     box-shadow:0px 0px 9px #eee;
+    z-index: 999;
 
   }
  .alink{
