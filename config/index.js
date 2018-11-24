@@ -3,14 +3,28 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-
+var proxyConfig = require('./proxyConfig')
 module.exports = {
     dev: {
-
+        env: require('./dev.env'),
+        // port: 8080,
+        // autoOpenBrowser: true,
+        // assetsSubDirectory: 'static',
+        // assetsPublicPath: '/',
+        proxyTable: proxyConfig.proxy,
+        // cssSourceMap: false,
         // Paths
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
-        proxyTable: {},
+        proxyTable: {
+            '/ss':{//此处并非一定和url一致。
+                target:'http://crm.fanxinfuwu.com/ajax/my/',
+                changeOrigin:true,//允许跨域
+                pathRewrite: {
+                    '^/ss': ''   //需要rewrite的,
+                } 
+              }
+        },
 
         // 各种开发服务器设置
         host: '127.0.0.1', // can be overwritten by process.env.HOST
