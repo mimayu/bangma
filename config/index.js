@@ -16,16 +16,6 @@ module.exports = {
         // Paths
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
-        proxyTable: {
-            '/ss':{//此处并非一定和url一致。
-                target:'http://crm.fanxinfuwu.com/ajax/my/',
-                changeOrigin:true,//允许跨域
-                pathRewrite: {
-                    '^/ss': ''   //需要rewrite的,
-                } 
-              }
-        },
-
         // 各种开发服务器设置
         host: '127.0.0.1', // can be overwritten by process.env.HOST
         port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined

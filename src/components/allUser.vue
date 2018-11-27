@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { GetUser } from '@/server';
+
 import footerNav from "./modPage/footerNav"; // 引入页脚
 import filtrate from "./modPage/filtrate"; // 筛选
 import detectionList from "./modPage/detectionList"; // 引入用户列表
@@ -35,20 +37,25 @@ export default {
       console.log("22");
     },
     getCompanyInfo() {
-      let scope = this;
-      // header("Access-Control-Allow-Origin:*");
-      axios
-        .get("http://crm.fanxinfuwu.com/ajax/my/?account_uid=2&iStatus=1")
-        // .header('content-type')
-        .then(function(response) {
-          console.log(response);
-        })
-        .catch(function(error) {
-          console.log(111)
+      GetUser().then(
+        res => {
+          console.log('res', res);
+        }
+      )
+      // let scope = this;
+      // // header("Access-Control-Allow-Origin:*");
+      // axios
+      //   .get("http://crm.fanxinfuwu.com/ajax/my/?account_uid=2&iStatus=1")
+      //   // .header('content-type')
+      //   .then(function(response) {
+      //     console.log(response);
+      //   })
+      //   .catch(function(error) {
+      //     console.log(111)
 
-          console.log(error);
-          //  console.log(error.response.headers);
-        });
+      //     console.log(error);
+      //     //  console.log(error.response.headers);
+      //   });
     },
     getImg: function() {
       var that = this;
