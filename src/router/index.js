@@ -15,6 +15,7 @@ import login from '@/components/login'
 import register from '@/components/register'
 import staffList from '@/components/staffList'
 import allotOrder from '@/components/allotOrder'
+import quotation from '@/components/quotation'
 
 
 
@@ -95,6 +96,11 @@ export default new Router({
             path: '/allotOrder',
             name: 'allotOrder',
             component: allotOrder
+        },
+        {
+            path: '/quotation',
+            name: 'quotation',
+            component: quotation
         },
     ]
 })
