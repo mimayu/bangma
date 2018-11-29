@@ -162,7 +162,6 @@
           </ul>
         </li>
       </ul>
-    </div>
   </div>
 </template>
 
@@ -236,7 +235,7 @@ textarea::placeholder {
         flex: 1;
         &:first-child{width: 20%;}
         &:last-child{width:20%;}
-        &：nth-child(2){width:60%;}
+        &:nth-child(2){width:60%;}
       }
       .arrow{text-align: right;}
     }
