@@ -2,14 +2,14 @@
   <div class="filtrate">
    <ul class="filtrate_tab">
       <li>
-        <Button>筛选</Button>
+        <Button  v-on:click="toggle()">筛选</Button>
       </li>
-      <li><Button>时间</Button></li>
+      <li><Button  v-on:click="toggle('time')">时间</Button></li>
       <li>
-        <Button shape="circle" icon="ios-search">Search</Button>
+        <Button shape="circle" icon="ios-search"  v-on:click="toggle('search')" >搜索</Button>
       </li>
    </ul>
-    <section class="filtrate-list" v-show="isshow">
+    <section class="filtrate-list" v-show="isShow">
       <Form :model="formData">
       <h6>筛选</h6>
       <Row :gutter="16">
@@ -58,25 +58,68 @@
         </i-col>
       </Row>
       </Form>
-         <div class="demo-drawer-footer">
-                <Button style="margin-right: 8px" @click="value3 = false">Cancel</Button>
-                <Button type="primary" @click="value3 = false">Submit</Button>
-            </div>
-      </section>
+      <div class="demo-drawer-footer">
+          <Button style="margin-right: 8px;background: #E9F3FC;" @click="value3 = false">Cancel</Button>
+          <Button type="primary" @click="value3 = false">Submit</Button>
+      </div>
+    </section>
+    <section class="filtrate-list time-box"  v-show="time">
+      <Row>
+        <i-col span="10">
+            <DatePicker type="date" :options="options3" placeholder="Select date"></DatePicker>
+        </i-col>
+      </Row>
+
+      <Row>
+
+        <i-col span="10">
+            <DatePicker type="date" :options="options3" placeholder="Select date"></DatePicker>
+        </i-col>
+      </Row>
+    </section>
+    <section class="filtrate-list serach-box"  v-show="search">
+        这里搜索
+    </section>
   </div>
 </template>
 
 <script>
 export default {
   name: "filtrate",
-  data() {
+  data:function() {
     return {
       // value1: false
-      isshow:false,
-       formData: {
-
-                },
+      isShow:false,
+      time:false,
+      search:false,
+      formData: {},
+      options3: {
+        disabledDate(date) {
+          return date && date.valueOf() < Date.now() - 86400000;
+        }
+      },
+      options4: {
+        disabledDate(date) {
+          const disabledDay = date.getDate();
+          return disabledDay === 15;
+        }
+      }
     };
+  },
+  methods: {
+    // toggle: function(val){
+    //   console.log(val,this.val = !this.val)
+    //   this.val = !this.val;
+    // }
+     toggle: function(val){
+      if(val=="time"){
+        this.time = !this.time;
+      }else if(val=="search") {
+        this.search = !this.search;
+      }else{
+        this.isShow = !this.isShow;
+      }
+    }
   }
 };
 </script>
@@ -85,11 +128,15 @@ export default {
 <style scoped lang='less'>
 .filtrate {
   .filtrate_tab {
-    padding: 10px;
+    padding: 10px;background: #fff;
     position: relative;
-    border-bottom: 1px solid  #D8D8D8;
+    border-bottom: 1px solid #d8d8d8;
     li {
       display: inline-block;
+      .ivu-btn>span{font-size: 14px;color: #999;}
+      &:nth-child(3){
+        border-left: 1px solid #d8d8d8;
+      }
     }
   }
   li:last-child {
@@ -100,17 +147,40 @@ export default {
     border: none;
     outline: none;
     box-shadow: none;
-    color: #1B96ED;font-size: 14px;
+    // color: #1b96ed;
+    font-size: 14px;
+    width: 45%;
   }
 }
-.filtrate-list{
+.filtrate-list {
+  background: #fff;
   padding: 10px;
-  h6{
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  h6 {
     padding: 10px;
   }
 }
-.ivu-col{
+.ivu-col {
   margin-bottom: 15px;
-  div{background: #F5F5F5;text-align: center;}
+  div {
+    background: #f5f5f5;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
   }
+}
+.demo-drawer-footer{
+  margin-top: 30px;
+}
+.time-box{
+  .ivu-input-icon-normal+.ivu-input{padding-right: 0;}
+  .ivu-input{height: 23px;border: 0;outline: 0;}
+}
+.ivu-input:focus {
+    border-color:#fff;
+    outline: 0;
+    box-shadow:none}
 </style>
