@@ -6,10 +6,9 @@
         <div class="user-details">
           <div class="user-name">刘女士</div>
           <span>女</span>
-          <span>35岁左右</span>
         </div>
       </div>
-      <span class="arrow"><img  src="../assets/img/Copy2x.png"></span>
+     
     </div>
       <span class="basic-text order-text">基本信息</span>
       <ul class="basic_info">
@@ -92,9 +91,9 @@
         </li> -->
       </ul>
       <ul>
-        <li></li>
+        <li><textarea>施工内容</textarea></li>
       </ul>
-      <textarea  placeholder="请在此处介绍自己...">施工内容</textarea>
+      
       <ul>
         <li class="basic_info_title"> 
           <ul class="basic_info_list">
@@ -110,58 +109,53 @@
         <ul class="basic_info_list">
             <li class="left">订单号</li>
             <li class="center">09800</li>
-            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
         </ul>
         <li class="basic_info_title">
           <ul class="basic_info_list">
             <li class="left">接单日期</li>
             <li class="center">2018-12-11</li>
-            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title">
           <ul class="basic_info_list">
             <li class="left">业务员</li>
             <li class="center">董春华</li>
-            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title">
           <ul class="basic_info_list">
             <li class="left">订单状态</li>
             <li class="center">基检未约</li>
-            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title">
           <ul class="basic_info_list">
             <li class="left">预约时间</li>
             <li class="center">2018-11-11</li>
-            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title">
           <ul class="basic_info_list">
             <li class="left">客户来源</li>
             <li class="center">百度</li>
-            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title order_info_title">
           <ul class="basic_info_list">
             <li class="left">刷新PSR</li>
             <li class="center">许祥春</li>
-            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
         <li class="basic_info_title order_info_title">
           <ul class="basic_info_list">
             <li class="left">推荐人</li>
             <li class="center">陆卫卫</li>
-            <li class="arrow"><img  src="../assets/img/Copy2x.png"></li>
           </ul>
         </li>
       </ul>
+      <template>
+        <Button type="success" class="bc" long>保存</Button> 
+      </template>
   </div>
 </template>
 
@@ -178,7 +172,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-#userinfo{background-color:#ccc;}
+#userinfo{background-color:#f6f6f6; padding-top: 17px;}
 .userinfo_top{
   width:100%;height:64px;background-color:#fff;display:flex;align-items: center;justify-content: space-between;padding-left: 15px;padding-right:15px;
   .user_img{
@@ -194,7 +188,7 @@ export default {
     }
   }
 }
-.basic-text{color:#9C9C9C;font-size:12px;background-color: #ccc;display: inline-block;width: 100%;height:25px;line-height:25px;padding-left:15px;}
+.basic-text{color:#9C9C9C;font-size:12px;display: inline-block;width: 100%;height:25px;line-height:25px;padding-left:15px;}
 .basic_info{
   background-color:#fff;
   .basic_info_title{
@@ -237,7 +231,11 @@ textarea::placeholder {
         &:last-child{width:20%;}
         &:nth-child(2){width:60%;}
       }
-      .arrow{text-align: right;}
+      .arrow{text-align: right; }
+      .arrow img{
+        width: 8px;
+        height: 14px;
+        }
     }
   }
 }
@@ -250,10 +248,16 @@ textarea::placeholder {
         &:last-child{width:25%;}
         &:nth-child(2){width:50%;}
       }
-      .arrow{text-align: right;}
+      .arrow{text-align: right; }
+      .arrow img{
+        width: 8px;
+        height: 14px;
+        }
+
       .work-content::placeholder{
         margin-left:30%;
       }
     }
   }
+  .bc{ width: 90%; margin:10px auto 10px 5%; background: #1E97FF; text-align:center;} 
 </style>

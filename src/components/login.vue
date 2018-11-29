@@ -11,7 +11,6 @@
         <FormItem label="验证码" prop="验证码" style="width:100%" >
           <br>
             <Input type="text" class="yzm" placeholder="请输入验证码" v-model="formCustom.passwdCheck"/>
-            <img class="yzm-pic" src="">
         </FormItem>
         
         <FormItem>
