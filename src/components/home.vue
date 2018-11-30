@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div id="home">
     <homePage></homePage>
     <footerNav></footerNav>
@@ -18,5 +18,5 @@ export default {
 </script>
 
 <style>
-
+.a{color:#000;}
 </style>
