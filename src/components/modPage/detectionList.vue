@@ -1,81 +1,74 @@
 <template>
-  <ul class="list">
-    <li>
-      <dl>
-        <dt>
-          <span class="order_num">订单号：</span>
-          <span class="number">232435436546546</span>
-          <span class="status">基检未约</span>
-        </dt>
-        <dd>
-          <span>姓名：</span>
-          毛先生
-        </dd>
-         <dd>
-          <span>手机号：</span>
-          17283904574875
-        </dd>
-         <dd>
-          <span>地址：</span>
-          上海市普陀区远景路97弄48号2103室
-        </dd>
-         <dd>
-          <span>施工内容：</span>
-          刷新+局装；需要做的有两套房，报价合适也想重新装修，就是怕麻烦，材料要用最好的 ...
-        </dd>
-         <dd>
-          <span>预约时间：</span>
-          -
-        </dd>
-         <dd>
-            <router-link class="yuyue" to="">预约</router-link>
-        </dd>
-      </dl>
-    </li>
-    <li>
-      <dl>
-        <dt>
-          <span class="order_num">订单号：</span>
-          <span class="number">232435436546546</span>
-          <span class="status">基检未约</span>
-        </dt>
-        <dd>
-          <span>姓名：</span>
-          毛先生
-        </dd>
-         <dd>
-          <span>手机号：</span>
-          17283904574875
-        </dd>
-         <dd>
-          <span>地址：</span>
-          上海市普陀区远景路97弄48号2103室
-        </dd>
-         <dd>
-          <span>施工内容：</span>
-          刷新+局装；需要做的有两套房，报价合适也想重新装修，就是怕麻烦，材料要用最好的 ...
-        </dd>
-         <dd>
-          <span>预约时间：</span>
-          -
-        </dd>
-         <dd>
-          <router-link class="yuyue" to="">预约</router-link>
-        </dd>
-      </dl>
-    </li>
-  </ul>
+  <section>
+    <div v-if="data.length == 0">
+      暂无数据
+    </div>
+    <div v-else>
+      <ul class="list">
+        <li v-for="item in data">
+          <dl>
+            <dt>
+              <span class="order_num">订单号：</span>
+              <span class="number">232435436546546</span>
+              <span class="status">{{title}}</span>
+            </dt>
+            <dd>
+              <span>姓名：</span>
+              {{item.sUsername || '-'}}
+            </dd>
+            <dd>
+              <span>手机号：</span>
+              {{item.sMobile || '-'}}
+            </dd>
+            <dd>
+              <span>地址：</span>
+              {{item.sAddress || '-'}}
+            </dd>
+            <dd>
+              <span>施工内容：</span>
+              {{item.sRemarks || '-'}}
+            </dd>
+            <dd>
+              <span>预约时间：</span>
+              {{item.timeYuyue || '-'}}
+            </dd>
+            <dd>
+              <router-link class="shangmen" to="">上门</router-link>
+              <router-link class="yuyue" to="">预约</router-link>
+            </dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </section>
+
 </template>
 
 <script>
-export default {
-  name: "list",
-  data() {
-    return {
-      // msg: '我是hello word'
-    };
-  }
-};
+  export default {
+    name: "list",
+    data() {
+      return {
+        // msg: '我是hello word'
+      };
+    },
+    updated() {
+      console.log(12)
+      console.log(this.data);
+    },
+    created() {
+      console.log('default', this.data);
+    },
+    props: {
+      'title': [String],
+      'data': {
+        type: Array,
+        default: function(){
+            return [];
+        }
+      }
+    }
+  };
 </script>
 
 <style scoped lang='less'>

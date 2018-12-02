@@ -11,7 +11,7 @@
           <detectionList></detectionList>
         </TabPane>
         <TabPane label="基检取消" name="name4">
-          <detectionList :data="data_cancel"></detectionList>
+          <detectionList :data="data_cancel" title="基检取消"></detectionList>
         </TabPane>
     </Tabs>
     <footerNav></footerNav>
@@ -47,12 +47,16 @@ export default {
     this.getInfo(params);
   },
   methods: {
-    getInfo(params) {
+    getInfo(params, type) {
       getCustomer(params).then(
         res => {
           console.log('res', res);
+          this.data_cancel = res.list;
         }
       )
+    },
+    getOption() {
+      
     }
   }
 }
