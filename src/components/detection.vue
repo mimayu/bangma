@@ -11,29 +11,50 @@
           <detectionList></detectionList>
         </TabPane>
         <TabPane label="基检取消" name="name4">
-          <detectionList></detectionList>
+          <detectionList :data="data_cancel"></detectionList>
         </TabPane>
     </Tabs>
     <footerNav></footerNav>
-
   </div>
 </template>
 
 <script>
+import { getCustomer } from '@/server';
 import footerNav from './modPage/footerNav' // 引入login.vue组件
 import detectionList from './modPage/detectionList' // 引入login.vue组件
+
 
 export default {
   name: 'detection',
   data () {
     return {
-    //   msg: '我是hello word'
+      data_under: [],
+      data_order: [],
+      data_confirm: [],
+      data_cancel: []
     }
   },
-    components: {
+  components: {
     'footerNav': footerNav,
-    'detectionList':detectionList
+    'detectionList':  detectionList
   },
+  created() {
+    let params = {
+      status: 3,
+      page: 1,
+      keywords: ''
+    }
+    this.getInfo(params);
+  },
+  methods: {
+    getInfo(params) {
+      getCustomer(params).then(
+        res => {
+          console.log('res', res);
+        }
+      )
+    }
+  }
 }
 </script>
 

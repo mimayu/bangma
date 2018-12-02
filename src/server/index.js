@@ -2,6 +2,18 @@ import {
     GetUser
 } from './user'
 
+import {
+    postLogin,
+    postRegiste
+} from './login'
+
+import {
+    getCustomer
+} from './customer'
+
 export {
-    GetUser
+    GetUser,
+    postLogin,
+    postRegiste,
+    getCustomer
 }

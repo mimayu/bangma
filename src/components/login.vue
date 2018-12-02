@@ -2,16 +2,21 @@
   <div class="allUser">
     <div class="logo"><img src=""/></div>
      <Form ref="formCustom" :model="formCustom" :rules="ruleCustom" >
-       <FormItem label="手机号" prop="手机号">
-            <Input type="text" placeholder="请输入手机号" style="width:94%!important;" v-model="formCustom.age" number/>
+       <FormItem label="手机号" prop="mobile">
+            <Input type="text" placeholder="请输入手机号" style="width:94%!important;" v-model="formCustom.mobile" number/>
         </FormItem>
-        <FormItem label="密码" prop="密码">
+        <FormItem label="密码" prop="passwd">
             <Input type="password" placeholder="请输入密码" style="width:94%!important;" v-model="formCustom.passwd"/>
         </FormItem>
-        <FormItem label="验证码" prop="验证码" style="width:100%" >
-          <br>
-            <Input type="text" class="yzm" placeholder="请输入验证码" v-model="formCustom.passwdCheck"/>
-            <img class="yzm-pic" src="">
+        <FormItem label="" prop="code" class="yzm-code">
+            <Row>
+                <Col span="12">
+                    <Input type="text" class="yzm" placeholder="请输入验证码" v-model="formCustom.code"/>
+                </Col>
+                <Col span="11" offset="1" class="yzm-pic-contain">
+                    <img class="yzm-pic" :src='picCode' @click="handleGetCode">
+                </Col>
+            </Row>
         </FormItem>
         
         <FormItem>
@@ -28,73 +33,91 @@
 </template>
 
 <script>
-import footerNav from './modPage/footerNav' // 引入页脚
-export default {
+    import { postLogin } from '@/server';
+
+    export default {
         data () {
+            const validateMobile = (rule, value, callback) => {
+                if (value === '') {
+                    callback(new Error('请输入手机号'));
+                }else {
+                    callback();
+                }
+                // if(!(/^1[3|4|5|7|8][0-9]{9}$/.test(value))){ 
+                //     callback(new Error('请输入正确的手机号'));
+                // }else {
+                //     callback();
+                // }
+            };
             const validatePass = (rule, value, callback) => {
                 if (value === '') {
-                    callback(new Error('Please enter your password'));
-                } else {
-                    if (this.formCustom.passwdCheck !== '') {
-                        // 对第二个密码框单独验证
-                        this.$refs.formCustom.validateField('passwdCheck');
-                    }
+                    callback(new Error('请输入密码'));
+                }else {
                     callback();
                 }
             };
-            const validatePassCheck = (rule, value, callback) => {
-                if (value === '') {
-                    callback(new Error('Please enter your password again'));
-                } else if (value !== this.formCustom.passwd) {
-                    callback(new Error('The two input passwords do not match!'));
-                } else {
+            const validateCode = (rule, value, callback) => {
+                if(!(/\w{4}$/.test(value))){ 
+                    callback(new Error('请输入正确的验证码'));
+                }else {
                     callback();
                 }
             };
-            const validateAge = (rule, value, callback) => {
-                if (!value) {
-                    return callback(new Error('Age cannot be empty'));
-                }
-                // 模拟异步验证效果
-                setTimeout(() => {
-                    if (!Number.isInteger(value)) {
-                        callback(new Error('Please enter a numeric value'));
-                    } else {
-                     if (value < 18) {
-                            callback(new Error('Must be over 18 years of age'));
-                        } else {
-                            callback();
-                        }
-                    }
-                }, 1000);
-            };
-            
+
             return {
+                picCode: '',
                 formCustom: {
+                    mobile: '',
                     passwd: '',
-                    passwdCheck: '',
-                    age: ''
+                    code: ''
                 },
                 ruleCustom: {
+                    mobile: [
+                        { validator: validateMobile, trigger: 'blur' }
+                    ],
                     passwd: [
                         { validator: validatePass, trigger: 'blur' }
                     ],
-                    passwdCheck: [
-                        { validator: validatePassCheck, trigger: 'blur' }
-                    ],
-                    age: [
-                        { validator: validateAge, trigger: 'blur' }
-                    ]
+                    code: [
+                        { validator: validateCode, trigger: 'blur' }
+                    ]                 
                 }
             }
         },
+        created() {
+            this.picCode = this.createPicCode();
+        },
         methods: {
+            createPicCode () {
+                let time = new Date().getTime();
+                return `http://www.51bangma.com/api/getcode/${time}`;
+            },
+            handleGetCode () {
+                this.picCode = this.createPicCode();
+            },
             handleSubmit (name) {
                 this.$refs[name].validate((valid) => {
                     if (valid) {
-                        this.$Message.success('Success!');
-                    } else {
-                        this.$Message.error('Fail!');
+                        let params = {
+                            'sUsername': this.formCustom.mobile,
+                            'sPassword': this.formCustom.passwd,
+                            'sCode': this.formCustom.code
+                        }
+                        postLogin(params).then(
+                            res => {
+                                if(res.success == 1) {
+                                    this.$Message.success('登录成功');
+                                    this.$router.push('/detection');
+                                    return;
+                                }
+                                if(res.success == 2) {
+                                    if(res.msg == '验证码输入有误') {
+                                        this.picCode = this.createPicCode();
+                                    }
+                                    this.$Message.error(res.msg);
+                                }
+                            }
+                        )
                     }
                 })
             },
@@ -107,41 +130,44 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-  .allUser{ padding: 10px; text-align: left;
-    .logo{
-      text-align:center;
-      margin-bottom: 10px;
+    .allUser{ padding: 10px; text-align: left;
+        .logo{
+            text-align:center;
+            margin-bottom: 10px;
+        }
+        .logo img{
+            width: 37px; height: 37px;
+        }
+        .page-footer{
+            position: fixed;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        .yzm-code {
+            margin-top: 20px;
+        }
+        .yzm-pic-contain {
+            text-align: right;
+            height: 42px;
+        }
+        .yzm-pic{
+            width: 130px;
+            height: 42px;
+        }
+        .login-btn{
+            width: 100%;
+            margin: 10px auto;
+            font-size: 16px;
+        }
+        h1{
+            text-align: center; font-size: 18px; color: #000; line-height: 30px;
+        }
+        h2{
+            text-align: center; font-size: 12px; color: #BABABA;
+        }
+        .ivu-form-item{
+            margin-bottom: 10px!important;
+        }
     }
-    .logo img{
-      width: 37px; height: 37px;
-    }
-    .page-footer{
-      position: fixed;
-      bottom: 10px;
-      text-align: center;
-      width: 100%;
-    }
-    .yzm{width: 45%; display: block; float: left;} 
-    .yzm-pic{
-      width: 155px;
-      height: 40px;
-      display: block;
-      float: right;
-      margin-right:5px;
-    }
-    .login-btn{
-      width: 100%;
-      margin: 10px auto;
-      font-size: 16px;
-    }
-    h1{
-      text-align: center; font-size: 18px; color: #000; line-height: 30px;
-    }
-    h2{
-      text-align: center; font-size: 12px; color: #BABABA;
-    }
-    .ivu-form-item{
-      margin-bottom: 10px!important;
-    }
-  }
 </style>
