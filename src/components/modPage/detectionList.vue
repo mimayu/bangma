@@ -9,7 +9,7 @@
           <dl>
             <dt>
               <span class="order_num">订单号：</span>
-              <span class="number">232435436546546</span>
+              <span class="number">{{item.iCustomerId}}</span>
               <span class="status">{{title}}</span>
             </dt>
             <dd>
