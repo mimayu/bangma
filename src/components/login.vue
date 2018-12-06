@@ -90,7 +90,7 @@
         methods: {
             createPicCode () {
                 let time = new Date().getTime();
-                return `/api/getcode/${time}`;
+                return `/api/getcode/?${time}`;
             },
             handleGetCode () {
                 this.picCode = this.createPicCode();

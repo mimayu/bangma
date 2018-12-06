@@ -1,67 +1,32 @@
 <template>
   <div id="quote">
-  <Tabs type="card">
-        <TabPane v-for="tab in tabs" :key="tab" :label="'标签' + tab">
-
-          <section class="list-box">
-            <ul class="left-box">
-              <li>厨房报价</li>
-              <li class="active">卫生间</li>
-              <li>卫生洁具</li>
-              <li>厨房报价</li>
-              <li>卫生间</li>
-              <li>卫生洁具</li>
-              <li>厨房报价</li>
-              <li>卫生间</li>
-              <li>卫生洁具</li>
-              <li>厨房报价</li>
-              <li>卫生间</li>
-              <li>卫生洁具</li>
-            </ul>
-            <ul class="right-box">
-              <li>
-                  <h3>卫生间</h3>
-                  <section class="info">
-                    <h4>立邦底材体系之墙面涂刷基层界面剂及造毛处理</h4>
-                    <p>单价：￥25   单位：m</p>
-                    <span class="price">小计<b class="red">10</b></span>
-                    <section class="price-edit">
-                      <a class="minus">-</a>
-                      <span>8888</span>
-                      <a class="add">+</a>
-                    </section>
+    <Tabs type="card">
+      <TabPane v-for="tab in tabs" :key="tab" :label="'标签' + tab">
+        <section class="list-box">
+          <ul class="left-box">
+            <li v-for="item in goods">{{item}}</li>
+          </ul>
+          <ul class="right-box">
+            <li v-for="item in details">
+                <h3>卫生间</h3>
+                <section class="info">
+                  <h4>立邦底材体系之墙面涂刷基层界面剂及造毛处理</h4>
+                  <p>单价：￥25   单位：m</p>
+                  <span class="price">小计
+                    <b class="red" v-show="item.count > 0">{{getSinglePrice(item.price,item.count)}}</b>
+                    <b class="red" v-show="item.count <= 0">0</b>
+                  </span>
+                  <section class="price-edit">
+                    <a class="minus" @click="minusCart(item)">-</a>
+                    <span>{{item.count}}</span>
+                    <a class="add" @click="addCart(item)">+</a>
                   </section>
-              </li>
-               <li>
-                  <h3>卫生间</h3>
-                  <section class="info">
-                    <h4>立邦底材体系之墙面涂刷基层界面剂及造毛处理</h4>
-                    <p>单价：￥25   单位：m</p>
-                    <span class="price">小计<b class="red">10</b></span>
-                    <section class="price-edit">
-                      <a class="minus">-</a>
-                      <span>8888</span>
-                      <a class="add">+</a>
-                    </section>
-                  </section>
-              </li>
-               <li>
-                  <h3>卫生间</h3>
-                  <section class="info">
-                    <h4>立邦底材体系之墙面涂刷基层界面剂及造毛处理</h4>
-                    <p>单价：￥25   单位：m</p>
-                    <span class="price">小计<b class="red">10</b></span>
-                    <section class="price-edit">
-                      <a class="minus">-</a>
-                      <span>8888</span>
-                      <a class="add">+</a>
-                    </section>
-                  </section>
-              </li>
-            </ul>
-          </section>
-        </TabPane>
-        <Button @click="handleTabsAdd" size="small" slot="extra">增加</Button>
+                </section>
+            </li>
+          </ul>
+        </section>
+      </TabPane>
+    <Button @click="handleTabsAdd" size="small" slot="extra">增加</Button>
     </Tabs>
     <div class="footer"> 
       工程总价：<b>￥1200</b>
@@ -71,24 +36,63 @@
 </template>
 
 <script>
+import { getQutoe } from '@/server';
 import footerNav from '../components/modPage/footerNav'
 import homePage from '../components/modPage/homePage' // 引入login.vue组件
 export default {
-  name: 'home',
+  name: 'quotation',
   components: {
     'footerNav': footerNav,
     'homePage': homePage,
   },
-  data(){
-       return {
-                tabs: 3
-            }
+  created() {
+    this.getQuote();
   },
-   methods: {
-            handleTabsAdd () {
-                this.tabs ++;
-            }
+  data(){
+    return {
+      tabs: 1,
+      goods: ['厨房报价', '卫生间', '卫生洁具', '厨房报价', '卫生间', '卫生洁具', '厨房报价', '卫生间', '卫生洁具', '厨房报价', '卫生间', '卫生洁具'],
+      details: [{
+        'title': '卫生间',
+        'brief': '立邦底材体系之墙面涂刷基层界面剂及造毛处理',
+        'price': '25',
+        'count': 0
+      }]
+    }
+  },
+  methods: {
+    handleTabsAdd () {
+        this.tabs ++;
+    },
+    getQuote() {
+      let params = {
+        iCustomerId: 1,
+        iMode: 1
+      }
+      getQutoe(params).then(
+        res => {
+          console.log('res', res);
         }
+      )
+    },
+    addCart(item) {
+      item.count ++;
+    },
+    minusCart(item) {
+      if(item.count == 0) {
+        return;
+      }
+      item.count --;
+    },
+    getSinglePrice(price, count) {
+      console.log(price, count)
+      return price * count
+    },
+    getTotalPrice(price, count) {
+      console.log(price, count)
+      return price * count
+    }
+  }
 }
 </script>
 

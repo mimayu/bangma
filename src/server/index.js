@@ -8,12 +8,14 @@ import {
 } from './login'
 
 import {
-    getCustomer
+    getCustomer,
+    getQutoe
 } from './customer'
 
 export {
     GetUser,
     postLogin,
     postRegiste,
-    getCustomer
+    getCustomer,
+    getQutoe
 }
