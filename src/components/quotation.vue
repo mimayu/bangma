@@ -62,11 +62,12 @@
           </section>
         </TabPane>
         <Button @click="handleTabsAdd" size="small" slot="extra">增加</Button>
+        <div class="footer"> 
+          工程总价：<b>￥1200</b>
+          <a>保存并打印</a>
+        </div>
     </Tabs>
-    <div class="footer"> 
-      工程总价：<b>￥1200</b>
-      <a>保存并打印</a>
-    </div>
+ 
   </div>
 </template>
 
