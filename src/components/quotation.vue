@@ -8,30 +8,30 @@
           </ul>
           <ul class="right-box">
             <li v-for="item in details">
-                <h3>卫生间</h3>
-                <section class="info">
-                  <h4>立邦底材体系之墙面涂刷基层界面剂及造毛处理</h4>
-                  <p>单价：￥25   单位：m</p>
-                  <span class="price">小计
-                    <b class="red" v-show="item.count > 0">{{getSinglePrice(item.price,item.count)}}</b>
-                    <b class="red" v-show="item.count <= 0">0</b>
-                  </span>
-                  <section class="price-edit">
-                    <a class="minus" @click="minusCart(item)">-</a>
-                    <span>{{item.count}}</span>
-                    <a class="add" @click="addCart(item)">+</a>
-                  </section>
+              <h3>卫生间</h3>
+              <section class="info">
+                <h4>立邦底材体系之墙面涂刷基层界面剂及造毛处理</h4>
+                <p>单价：￥25   单位：m</p>
+                <span class="price">小计
+                  <b class="red" v-show="item.count > 0">{{getSinglePrice(item.price,item.count)}}</b>
+                  <b class="red" v-show="item.count <= 0">0</b>
+                </span>
+                <section class="price-edit">
+                  <a class="minus" @click="minusCart(item)">-</a>
+                  <span>{{item.count}}</span>
+                  <a class="add" @click="addCart(item)">+</a>
                 </section>
-            </li>
-          </ul>
-        </section>
-      </TabPane>
-    <Button @click="handleTabsAdd" size="small" slot="extra">增加</Button>
+              </section>
+              </li>
+            </ul>
+          </section>
+        </TabPane>
+        <Button @click="handleTabsAdd" size="small" slot="extra">增加</Button>
+        <div class="footer"> 
+          工程总价：<b>￥1200</b>
+          <a>保存并打印</a>
+        </div>
     </Tabs>
-    <div class="footer"> 
-      工程总价：<b>￥1200</b>
-      <a>保存并打印</a>
-    </div>
   </div>
 </template>
 
